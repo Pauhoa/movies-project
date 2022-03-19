@@ -11,7 +11,7 @@ export default class MovieElement extends Component {
     
     return (
       <div onMouseEnter={ this.mouseEnter } className="p-2 w-50">
-        <div className="border d-flex">
+        <div className="border d-flex bg-light">
           <img
             width="240"
             height="320"
