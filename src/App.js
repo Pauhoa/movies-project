@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, MovieList, MovieDetails, Loading } from './components';
+import { Header, MovieList, MovieDetails, Loading } from "./components";
 import dataMovies from "./data.js";
 
 class App extends Component {
@@ -11,11 +11,11 @@ class App extends Component {
       loaded: false,
     };
 
-    setTimeout( () => {
+    setTimeout(() => {
       this.setState({
         movies: dataMovies,
-        loaded: true
-      })
+        loaded: true,
+      });
     }, 100);
   }
 
@@ -27,10 +27,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App d-flex flex-column">
+      <div className="App d-flex flex-column ">
         <Header />
         {this.state.loaded ? (
-          <div className="d-flex flex-row flex-fill pt-4 p-2">
+          <div className="d-flex flex-row flex-fill pt-4">
             <MovieList
               movies={this.state.movies}
               updateSelectedMovie={this.updateSelectedMovie}
