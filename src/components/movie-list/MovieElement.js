@@ -1,26 +1,27 @@
 import React, { Component } from "react";
 
 export default class MovieElement extends Component {
+  
+  mouseEnter = () => {
+      this.props.updateSelectedMovie(this.props.movie.title);
+  }
+  
+  
   render() {
+    
     return (
-      <div className="w-25 p-2">
-        <div className="card">
+      <div onMouseEnter={ this.mouseEnter } className="p-2 w-50">
+        <div className="border d-flex">
           <img
-            alt="affiche de gladiator"
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6YFpWi6v8WvU3MCP0NE9aSDmPs1aJG-HwusLIf-n0IEAhFCYo"
-            className="card-img-top"
+            width="240"
+            height="320"
+            alt={"Affiche de " + this.props.movie.title}
+            src={this.props.movie.img}
           />
-          <div className="card-body">
-            <h5 className="card-title">Captain Fantastic</h5>
-            <p className="card-text">
-              Ben Cash, sa femme Leslie et leurs six enfants habitent dans une
-              région sauvage de l'état de Washington. Isolés de la société, Ben
-              et Leslie consacrent tous leurs efforts à leurs enfants -- voulant
-              qu'ils réfléchissent décisivement, qu'ils soient athlétiques et en
-              bonne forme, et qu'ils arrivent à naviguer dans la nature sans
-              technologie. Quand Leslie meurt soudainement, Ben doit amener ses
-              enfants protégés au monde extérieur pour la première fois.
-            </p>
+          <div className="flex-fill d-flex flex-column p-3">
+            <h5>{this.props.movie.title}</h5>
+            <hr className="w-100" />
+            <span>{this.props.movie.details}</span>
           </div>
         </div>
       </div>
